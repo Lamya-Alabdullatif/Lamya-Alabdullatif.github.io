@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lamya Alabdullatif — Data & Applied AI Engineer</title>
+<meta name="description" content="Portfolio of Lamya Alabdullatif — Computer Engineering graduate specializing in data analysis, Power BI, and applied RAG/LLM systems.">
+<link rel="icon" href="assets/monogram.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1017;
+    --bg-2:#10141c;
+    --surface:#161b25;
+    --surface-2:#1d232f;
+    --line:#272e3a;
+    --line-soft:#1e2530;
+    --text:#eceef3;
+    --muted:#8791a3;
+    --muted-2:#5c6577;
+    --accent:#8b93f0;
+    --accent-strong:#a5abf5;
+    --accent-soft:rgba(139,147,240,.14);
+    --accent-text:#0e1020;
+    --teal:#4fbfa8;
+    --teal-soft:rgba(79,191,168,.14);
+    --serif:'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+    --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --maxw:1160px;
+    --ease:cubic-bezier(.22,.85,.32,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 12% -8%, rgba(139,147,240,.08), transparent 60%),
+      radial-gradient(ellipse 800px 500px at 88% 8%, rgba(79,191,168,.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* ---------- eyebrow / tag chrome ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+    flex:none;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--muted);
+    letter-spacing:.03em;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(18,22,28,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-mark{
+    display:flex;align-items:center;gap:10px;
+    font-family:var(--serif);font-size:19px;font-weight:600;
+    text-decoration:none;
+  }
+  .nav-mark img{width:30px;height:30px;border-radius:7px;object-fit:cover;}
+  .nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:13px;}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .15s;}
+  .nav-links a:hover{color:var(--accent);}
+  @media (max-width:640px){ .nav-links{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:88px 0 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:-20% -10% auto -10%; height:520px;
+    background:radial-gradient(ellipse at 30% 0%, var(--accent-soft), transparent 60%),
+               radial-gradient(ellipse at 80% 20%, var(--teal-soft), transparent 55%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:40px;} }
+
+  .status-chip{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;color:var(--teal);
+    background:var(--teal-soft);
+    border:1px solid rgba(89,184,146,.35);
+    padding:6px 12px;border-radius:100px;
+    margin-bottom:22px;
+  }
+  .status-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);
+    box-shadow:0 0 0 0 rgba(89,184,146,.6); animation:pulse 2.2s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(89,184,146,.5);}
+    70%{box-shadow:0 0 0 7px rgba(89,184,146,0);}
+    100%{box-shadow:0 0 0 0 rgba(89,184,146,0);}
+  }
+
+  h1.hero-name{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(40px, 6vw, 62px);
+    line-height:1.04;
+    margin:0 0 6px;
+    letter-spacing:-.01em;
+  }
+  .hero-role{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--accent);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    margin:0 0 22px;
+  }
+  .hero-bio{
+    font-size:17px;
+    color:#c7cdd6;
+    max-width:52ch;
+    margin:0 0 30px;
+  }
+  .hero-bio em{color:var(--text); font-style:normal; border-bottom:1px solid var(--accent);}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
+  .btn{
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+    padding:11px 18px;border-radius:8px;
+    text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);
+    transition:transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(0,0,0,.5);}
+  .btn-primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600;}
+  .btn-primary:hover{background:var(--accent-strong);}
+  .btn-ghost{color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  .hero-meta{
+    display:flex;gap:22px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted-2);
+  }
+
+  /* hero visual */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
+  .mark-frame{
+    width:min(320px, 78vw);
+    aspect-ratio:1/1;
+    border-radius:26px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--surface);
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
+  }
+  .mark-frame img{width:100%;height:100%;object-fit:cover;}
+  .float-card{
+    position:absolute;
+    bottom:-22px; left:-22px;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 14px;
+    width:220px;
+    box-shadow:0 20px 40px -14px rgba(0,0,0,.6);
+  }
+  @media (max-width:900px){ .float-card{left:50%;transform:translateX(-50%);bottom:-26px;} }
+  .float-card .fc-title{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:.04em;}
+  .fc-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11.5px;margin-bottom:5px;}
+  .fc-row span:last-child{color:var(--teal);}
+
+  /* ---------- capability strip ---------- */
+  .strip{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--surface);
+    padding:20px 0;
+    overflow:hidden;
+  }
+  .strip-track{
+    display:flex;gap:10px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:12.5px;
+    justify-content:center;
+  }
+  .strip-item{
+    display:flex;align-items:center;gap:8px;
+    padding:8px 15px;border:1px solid var(--line);border-radius:100px;
+    color:var(--muted);
+    transition:border-color .2s var(--ease), color .2s var(--ease), transform .2s var(--ease), background .2s var(--ease);
+  }
+  .strip-item:hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px);background:var(--accent-soft);}
+  .strip-item svg{width:14px;height:14px;color:var(--teal);flex:none;}
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0;}
+  section.tight{padding:72px 0;}
+  .section-head{margin-bottom:44px;max-width:640px;}
+  .section-title{
+    font-family:var(--serif);
+    font-size:clamp(28px,3.4vw,38px);
+    font-weight:600;
+    margin:0 0 12px;
+    letter-spacing:-.01em;
+  }
+  .section-sub{color:var(--muted);font-size:15.5px;margin:0;}
+
+  .subgroup-label{
+    font-family:var(--mono);font-size:12px;color:var(--muted-2);
+    text-transform:uppercase;letter-spacing:.08em;
+    margin:52px 0 20px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .subgroup-label::after{content:"";flex:1;height:1px;background:var(--line);}
+  .subgroup-label:first-of-type{margin-top:0;}
+
+  /* project grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:960px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .card:hover{border-color:#333c4c;transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.55);}
+  .card-media{
+    position:relative;aspect-ratio:16/10;overflow:hidden;background:#0d1116;
+    border-bottom:1px solid var(--line);
+  }
+  .card-media img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s var(--ease);}
+  .card:hover .card-media img{transform:scale(1.04);}
+  .card-tag{
+    position:absolute;top:10px;left:10px;
+    font-family:var(--mono);font-size:11px;color:var(--bg);
+    background:var(--accent);
+    padding:3px 8px;border-radius:5px;font-weight:600;
+  }
+  .card-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;}
+  .card-title{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 8px;}
+  .card-stat{
+    font-family:var(--mono);font-size:12.5px;color:var(--teal);
+    margin:0 0 10px;
+  }
+  .card-desc{color:var(--muted);font-size:13.8px;margin:0 0 16px;flex:1;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .chip{
+    font-family:var(--mono);font-size:10.8px;color:var(--muted);
+    border:1px solid var(--line);padding:3px 8px;border-radius:5px;
+  }
+  .card-link{
+    font-family:var(--mono);font-size:12.5px;color:var(--text);
+    text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+    padding-top:12px;border-top:1px solid var(--line);
+    margin-top:auto;
+  }
+  .card-link:hover{color:var(--accent);}
+  .card-link svg{width:13px;height:13px;transition:transform .15s;}
+  .card-link:hover svg{transform:translate(2px,-2px);}
+
+  /* ---------- skills ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  @media (max-width:720px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill-group{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;
+    transition:border-color .25s var(--ease), transform .25s var(--ease);
+  }
+  .skill-group:hover{border-color:#333c4a;transform:translateY(-2px);}
+  .skill-group-title{
+    font-family:var(--mono);font-size:12px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.06em;margin:0 0 18px;
+    display:flex;align-items:center;gap:9px;
+  }
+  .skill-group-title svg{width:16px;height:16px;flex:none;}
+  .skill-group-title .n{color:var(--muted-2);margin-left:auto;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:9px;}
+  .skill-tag{
+    font-size:13.5px;color:var(--text);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    padding:7px 13px;border-radius:8px;
+    transition:border-color .18s var(--ease), background .18s var(--ease), transform .18s var(--ease);
+  }
+  .skill-tag:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-1px);}
+
+  /* ---------- certificates ---------- */
+  .cert-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);}
+  .cert-row{
+    display:grid;grid-template-columns:70px 1fr auto;gap:16px;align-items:center;
+    padding:18px 20px;border-bottom:1px solid var(--line);
+  }
+  .cert-row:last-child{border-bottom:none;}
+  .cert-row:hover{background:var(--surface-2);}
+  .cert-id{font-family:var(--mono);color:var(--accent);font-size:13px;}
+  .cert-name{font-weight:600;font-size:15px;margin:0 0 3px;}
+  .cert-issuer{font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .cert-date{font-family:var(--mono);font-size:12px;color:var(--muted-2);text-align:right;white-space:nowrap;}
+  @media (max-width:640px){
+    .cert-row{grid-template-columns:44px 1fr;}
+    .cert-date{grid-column:2;text-align:left;margin-top:2px;}
+  }
+
+  /* ---------- contact / footer ---------- */
+  .contact{
+    text-align:center;
+    padding:100px 0 60px;
+    position:relative;
+  }
+  .contact-title{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(30px,4.2vw,46px);
+    margin:0 0 16px;
+  }
+  .contact-sub{color:var(--muted);max-width:46ch;margin:0 auto 34px;}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    font-family:var(--mono);font-size:12px;color:var(--muted-2);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(8,10,13,.92);
+    display:none;align-items:center;justify-content:center;
+    z-index:100;padding:30px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-height:92vh;max-width:92vw;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .grid .card:nth-child(2){transition-delay:.06s;}
+  .grid .card:nth-child(3){transition-delay:.12s;}
+  .grid .card:nth-child(2n){transition-delay:.05s;}
+  .skills-grid .skill-group:nth-child(2){transition-delay:.06s;}
+  .skills-grid .skill-group:nth-child(3){transition-delay:.12s;}
+  .skills-grid .skill-group:nth-child(4){transition-delay:.18s;}
+
+  /* hero load-in */
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .status-chip{animation:rise .7s var(--ease) both;}
+  h1.hero-name{animation:rise .7s var(--ease) .06s both;}
+  .hero-role{animation:rise .7s var(--ease) .11s both;}
+  .hero-bio{animation:rise .7s var(--ease) .16s both;}
+  .hero-cta{animation:rise .7s var(--ease) .21s both;}
+  .hero-meta{animation:rise .7s var(--ease) .26s both;}
+  .hero-visual{animation:rise .8s var(--ease) .18s both;}
+
+  /* gentle float for the floating card */
+  @keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+  .float-card{animation:drift 5.5s ease-in-out infinite;}
+  @media (max-width:900px){ .float-card{animation:none;} }
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+    .status-chip .dot{animation:none;}
+    .status-chip,h1.hero-name,.hero-role,.hero-bio,.hero-cta,.hero-meta,.hero-visual{animation:none;opacity:1;transform:none;}
+    .float-card{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark"><img src="assets/monogram.jpeg" alt="LA monogram">Lamya</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="status-chip"><span class="dot"></span>Open to opportunities — Class of 2026</div>
+        <h1 class="hero-name">Lamya Alabdullatif</h1>
+        <p class="hero-role">[ Computer Engineer — Data &amp; Applied AI ]</p>
+        <p class="hero-bio">Computer Engineer specializing in data analysis and applied generative AI. I build tools that turn messy data into clear decisions — from interactive <em>Power BI</em> dashboards to source‑grounded Arabic <em>RAG</em> systems. Mustaqbal University, Class of 2026.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">View selected work ↓</a>
+          <a class="btn btn-ghost" href="https://github.com/Lamya-Alabdullatif" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/lamya-alabdullati" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+        <div class="hero-meta">
+          <span>[ 10 projects indexed ]</span>
+          <span>[ 9 certifications ]</span>
+          <span>[ Riyadh, Saudi Arabia ]</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="mark-frame"><img src="assets/monogram.jpeg" alt="Lamya Alabdullatif monogram"></div>
+        <div class="float-card">
+          <div class="fc-title">[ CAPABILITY — VERIFIED ]</div>
+          <div class="fc-row"><span>Data &amp; Power BI</span><span>●</span></div>
+          <div class="fc-row"><span>RAG / LLM Systems</span><span>●</span></div>
+          <div class="fc-row"><span>Cloud &amp; Embedded</span><span>●</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPABILITY STRIP ================= -->
+  <div class="strip">
+    <div class="wrap strip-track">
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="11" width="3" height="6" rx=".5" stroke="currentColor" stroke-width="1.6"/><rect x="8.5" y="7" width="3" height="10" rx=".5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="3" height="14" rx=".5" stroke="currentColor" stroke-width="1.6"/></svg>Data Analysis</span>
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 3a7 7 0 010 14" stroke="currentColor" stroke-width="1.6"/></svg>Power BI</span>
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="15" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.7 7.2L9 13.3M12.3 7.2L11 13.3M8 6h4" stroke="currentColor" stroke-width="1.4"/></svg>RAG / LLM Systems</span>
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><path d="M6 4l-4 6 4 6M14 4l4 6-4 6M12 3l-4 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Python</span>
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><path d="M6 15a3.5 3.5 0 01-.5-6.96A4.5 4.5 0 0114 6.5a3.5 3.5 0 010 7H6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Cloud (AWS · IBM)</span>
+      <span class="strip-item"><svg viewBox="0 0 20 20" fill="none"><rect x="7" y="7" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2M5 5l1.4 1.4M15 5l-1.4 1.4M5 15l1.4-1.4M15 15l-1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Embedded Systems</span>
+    </div>
+  </div>
+
+  <!-- ================= WORK ================= -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Selected work</div>
+        <h2 class="section-title">Ten projects, source-linked</h2>
+        <p class="section-sub">Every card links to a working repository or a project poster — nothing here is a mockup.</p>
+      </div>
+
+      <div class="subgroup-label reveal">Data &amp; Applied AI</div>
+      <div class="grid">
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-01</span><img src="assets/projects/muhaseb-1.png" alt="Muhaseb AI chat answering a VAT question with citation"></div>
+          <div class="card-body">
+            <h3 class="card-title">مُحاسب — Muhaseb AI</h3>
+            <p class="card-stat">→ Cites the exact ZATCA article for every answer</p>
+            <p class="card-desc">Arabic RAG assistant for Saudi VAT &amp; e-invoicing compliance. Answers are grounded in official ZATCA documents and refuse to answer out of scope — plus an invoice compliance checker.</p>
+            <div class="chip-row"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Groq · Llama 3.3</span><span class="chip">Qdrant</span><span class="chip">Hybrid Search</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/muhaseb-ai-showcase" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-02</span><img src="assets/projects/legal-rag-1.jpeg" alt="Legal RAG chat with grounding rate and citations"></div>
+          <div class="card-body">
+            <h3 class="card-title">Legal RAG — Labor Law Assistant</h3>
+            <p class="card-stat">→ Recall@10: 97.8% · 100% precision on flagged claims</p>
+            <p class="card-desc">RAG system answering questions on Saudi Labor &amp; Social Insurance Law, with a sentence-level grounding/hallucination check and a reproducible evaluation suite.</p>
+            <div class="chip-row"><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">Streamlit</span><span class="chip">Hybrid Retrieval</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/legal-rag-showcase" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-03</span><img src="assets/projects/google-play.png" alt="Google Play Store analytics Power BI dashboard"></div>
+          <div class="card-body">
+            <h3 class="card-title">Google Play Store Analytics</h3>
+            <p class="card-stat">→ 11,500 apps · $590M+ in tracked revenue</p>
+            <p class="card-desc">Interactive Power BI dashboard analyzing app installs, revenue, ratings and category trends, built on a fully documented Excel data-cleaning pipeline.</p>
+            <div class="chip-row"><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">Data Cleaning</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/google-play-store-analytics-dashboard" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-04</span><img src="assets/projects/gaming-insights.png" alt="Top platforms by global game sales chart"></div>
+          <div class="card-body">
+            <h3 class="card-title">Gaming Market Insights</h3>
+            <p class="card-stat">→ Platform, genre &amp; publisher sales trends</p>
+            <p class="card-desc">Exploratory analysis of global video game sales — platform performance, genre trends, and the relationship between critic scores and sales.</p>
+            <div class="chip-row"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Seaborn</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/Gaming-Market-Insights" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-05</span><img src="assets/projects/nike.jpeg" alt="Nike global performance Power BI dashboard"></div>
+          <div class="card-body">
+            <h3 class="card-title">Nike Performance Dashboard</h3>
+            <p class="card-stat">→ 1.28M revenue across 1,200+ orders</p>
+            <p class="card-desc">Global sales dashboard tracking revenue, profit, and unit performance across products, categories, and regions.</p>
+            <div class="chip-row"><span class="chip">Power BI</span><span class="chip">Excel</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/nike-powerbi-dashboard" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-06</span><img src="assets/projects/zara.png" alt="Zara product sales Power BI dashboard"></div>
+          <div class="card-body">
+            <h3 class="card-title">Zara Sales Dashboard</h3>
+            <p class="card-stat">→ 1.92M revenue · 30% profit margin</p>
+            <p class="card-desc">Category-level revenue and profitability analysis for a 2025 retail sales dataset, with month-over-month tracking.</p>
+            <div class="chip-row"><span class="chip">Power BI</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/zara-powerbi-dashboard" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="subgroup-label reveal">Systems &amp; Embedded Engineering</div>
+      <div class="grid">
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-07</span><img src="assets/projects/cover-kubernetes.jpeg" alt="Physical Kubernetes cluster poster"></div>
+          <div class="card-body">
+            <h3 class="card-title">Physical Kubernetes Cluster</h3>
+            <p class="card-stat">→ 3-node bare-metal cluster, stateful workloads</p>
+            <p class="card-desc">Designed and deployed a Kubernetes cluster on Raspberry Pi hardware running PostgreSQL with NFS shared storage, to study real-world orchestration behavior beyond cloud abstractions.</p>
+            <div class="chip-row"><span class="chip">Kubernetes</span><span class="chip">Raspberry Pi</span><span class="chip">PostgreSQL</span><span class="chip">NFS</span></div>
+            <a class="card-link js-lightbox" href="assets/projects/full-kubernetes.jpeg">View project poster <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-08</span><img src="assets/projects/cover-lifi.jpeg" alt="Li-Fi wireless data transfer poster"></div>
+          <div class="card-body">
+            <h3 class="card-title">Wireless Data Transfer (Li-Fi)</h3>
+            <p class="card-stat">→ 95–100% transmission accuracy</p>
+            <p class="card-desc">Built a Li-Fi communication system transmitting text messages as light pulses via laser pointer, received and decoded through an LDR sensor and displayed on an LCD.</p>
+            <div class="chip-row"><span class="chip">Arduino</span><span class="chip">C++</span><span class="chip">Optical Comms</span></div>
+            <a class="card-link js-lightbox" href="assets/projects/full-lifi.jpeg">View project poster <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-09</span><img src="assets/projects/cover-driver-warning.jpeg" alt="Driver warning device poster"></div>
+          <div class="card-body">
+            <h3 class="card-title">Driver Warning Device</h3>
+            <p class="card-stat">→ Real-time drowsiness alerts</p>
+            <p class="card-desc">Arduino-powered device using a tilt sensor to monitor driver head position and trigger a buzzer alert, addressing distraction- and drowsiness-related accidents.</p>
+            <div class="chip-row"><span class="chip">Arduino Nano</span><span class="chip">Embedded C</span><span class="chip">Circuit Design</span></div>
+            <a class="card-link" href="https://github.com/Lamya-Alabdullatif/Driver-Warning-Device" target="_blank" rel="noopener">View on GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media"><span class="card-tag">P-10</span><img src="assets/projects/cover-orthosis.jpeg" alt="3D printed orthosis poster"></div>
+          <div class="card-body">
+            <h3 class="card-title">3D Printed Orthosis</h3>
+            <p class="card-stat">→ Low-cost splint concept for limb injury recovery</p>
+            <p class="card-desc">Designed and manufactured a novel 3D-printed splint using SolidWorks and PLA thermoplastic, exploring low-cost alternatives to traditional orthoses.</p>
+            <div class="chip-row"><span class="chip">SolidWorks</span><span class="chip">3D Printing</span></div>
+            <a class="card-link js-lightbox" href="assets/projects/full-orthosis.jpeg">View project poster <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Capabilities</div>
+        <h2 class="section-title">Skills, grouped by how I use them</h2>
+        <p class="section-sub">Drawn directly from shipped projects and completed coursework — not a checklist.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-title"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="11" width="3" height="6" rx=".5" stroke="currentColor" stroke-width="1.6"/><rect x="8.5" y="7" width="3" height="10" rx=".5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="3" height="14" rx=".5" stroke="currentColor" stroke-width="1.6"/></svg>Data &amp; BI <span class="n">[ S-01 ]</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+            <span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">DAX</span>
+            <span class="skill-tag">Excel</span><span class="skill-tag">Data Visualization</span><span class="skill-tag">Data Cleaning</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title"><svg viewBox="0 0 20 20" fill="none"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="15" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.7 7.2L9 13.3M12.3 7.2L11 13.3M8 6h4" stroke="currentColor" stroke-width="1.4"/></svg>AI / LLM Engineering <span class="n">[ S-02 ]</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">RAG Systems</span><span class="skill-tag">LangChain</span><span class="skill-tag">Hybrid Search (BM25 + Dense)</span>
+            <span class="skill-tag">Vector Search (Qdrant)</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Groq / LLM APIs</span>
+            <span class="skill-tag">Grounding &amp; Evaluation</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title"><svg viewBox="0 0 20 20" fill="none"><path d="M6 15a3.5 3.5 0 01-.5-6.96A4.5 4.5 0 0114 6.5a3.5 3.5 0 010 7H6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Cloud &amp; Infrastructure <span class="n">[ S-03 ]</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS Cloud Practitioner</span><span class="skill-tag">IBM Cloud</span>
+            <span class="skill-tag">Kubernetes</span><span class="skill-tag">Docker / Containers</span><span class="skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title"><svg viewBox="0 0 20 20" fill="none"><rect x="7" y="7" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2M5 5l1.4 1.4M15 5l-1.4 1.4M5 15l1.4-1.4M15 15l-1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Embedded &amp; Systems <span class="n">[ S-04 ]</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Arduino (Uno / Nano)</span><span class="skill-tag">C++</span>
+            <span class="skill-tag">Circuit Design</span><span class="skill-tag">SolidWorks</span><span class="skill-tag">3D Printing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATES ================= -->
+  <section id="certs" class="tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Verified credentials</div>
+        <h2 class="section-title">Certificates</h2>
+        <p class="section-sub">Nine completed certifications across cloud, data analytics, and Power BI.</p>
+      </div>
+      <div class="cert-list reveal">
+        <div class="cert-row">
+          <span class="cert-id">C-01</span>
+          <div><p class="cert-name">AWS Cloud Practitioner</p><p class="cert-issuer">Global Knowledge</p></div>
+          <span class="cert-date">Jul 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-02</span>
+          <div><p class="cert-name">Power BI Data Analysis Bootcamp</p><p class="cert-issuer">IEOM Society International</p></div>
+          <span class="cert-date">May 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-03</span>
+          <div><p class="cert-name">AWS Cloud Practitioner Essentials</p><p class="cert-issuer">Amazon Web Services · ID 54YJKOALD4BA</p></div>
+          <span class="cert-date">Apr 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-04</span>
+          <div><p class="cert-name">Introduction to Cloud Computing</p><p class="cert-issuer">IBM · ID RZY84XJHAW8H</p></div>
+          <span class="cert-date">Apr 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-05</span>
+          <div><p class="cert-name">Python for Data Analysis: Pandas &amp; NumPy</p><p class="cert-issuer">Coursera</p></div>
+          <span class="cert-date">Mar 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-06</span>
+          <div><p class="cert-name">Introduction to Data Analytics</p><p class="cert-issuer">IBM</p></div>
+          <span class="cert-date">Mar 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-07</span>
+          <div><p class="cert-name">Foundations: Data, Data, Everywhere</p><p class="cert-issuer">Google</p></div>
+          <span class="cert-date">Mar 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-08</span>
+          <div><p class="cert-name">معسكر تحليل البيانات — Data Analysis Bootcamp</p><p class="cert-issuer">Mufakker | مفكِّر</p></div>
+          <span class="cert-date">Mar 2026</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-id">C-09</span>
+          <div><p class="cert-name">STC Virtual Work Experience — Data Analysis</p><p class="cert-issuer">Misk Foundation</p></div>
+          <span class="cert-date">Mar 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center;">Get in touch</div>
+      <h2 class="contact-title">Let's build something<br>worth citing.</h2>
+      <p class="contact-sub">Open to data analyst, BI, and applied AI/RAG engineering roles. Reach out by email or LinkedIn — I reply quickly.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/lamya-alabdullati" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="mailto:lamyau092@gmail.com">Email me ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/Lamya-Alabdullatif" target="_blank" rel="noopener">See all repos on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%;">
+    <span>© 2026 Lamya Alabdullatif</span>
+    <span><a href="mailto:lamyau092@gmail.com" style="color:inherit;text-decoration:none;">lamyau092@gmail.com</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img id="lightbox-img" src="" alt="Project poster, enlarged"></div>
+
+<script>
+  // reveal on scroll
+  const items = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    items.forEach(el=>io.observe(el));
+  } else {
+    items.forEach(el=>el.classList.add('in'));
+  }
+
+  // lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.js-lightbox').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', ()=> lb.classList.remove('open'));
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+</script>
+
+</body>
+</html>
