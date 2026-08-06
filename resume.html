@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f7fb; --bg-2:#eef1f7; --surface:#ffffff; --surface-2:#f3f5fa;
-    --line:#e3e6ee; --text:#171a23; --muted:#5c6478; --muted-2:#8891a2;
-    --accent:#5b5fee; --accent-strong:#4347d1; --accent-soft:rgba(91,95,238,.10);
-    --accent-text:#ffffff; --teal:#0f9e83;
+    --bg:#0b0d14; --bg-2:#10131c; --surface:#161a26; --surface-2:#1d2233;
+    --line:#2a2f42; --text:#eef0f8; --muted:#9298b0; --muted-2:#666c85;
+    --accent:#8b90f5; --accent-strong:#a5aaf8; --accent-soft:rgba(139,144,245,.14);
+    --accent-text:#0b0d14; --teal:#3fceb0;
     --serif:'Fraunces', Georgia, serif;
     --mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
     --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
@@ -26,8 +26,8 @@
   body{
     margin:0;
     background:
-      radial-gradient(ellipse 900px 500px at 12% -8%, rgba(91,95,238,.10), transparent 60%),
-      radial-gradient(ellipse 800px 500px at 88% 8%, rgba(15,158,131,.08), transparent 55%),
+      radial-gradient(ellipse 900px 500px at 12% -8%, rgba(139,144,245,.14), transparent 60%),
+      radial-gradient(ellipse 800px 500px at 88% 8%, rgba(63,206,176,.10), transparent 55%),
       var(--bg);
     color:var(--text); font-family:var(--sans); line-height:1.6;
     -webkit-font-smoothing:antialiased;
@@ -36,7 +36,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
 
-  header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(255,255,255,.78);border-bottom:1px solid var(--line);}
+  header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(11,13,20,.82);border-bottom:1px solid var(--line);}
   .nav-inner{max-width:1160px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;}
   .nav-mark{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:19px;font-weight:600;text-decoration:none;}
   .nav-mark svg{width:30px;height:30px;flex-shrink:0;}
