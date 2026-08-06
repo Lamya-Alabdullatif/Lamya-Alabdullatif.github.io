@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Lamya Alabdullatif</title>
+<meta name="description" content="Resume of Lamya Alabdullatif — Computer Engineering student specializing in data analysis, Power BI, and applied RAG/LLM systems.">
+<link rel="icon" href="assets/monogram.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1017; --bg-2:#10141c; --surface:#161b25; --surface-2:#1d232f;
+    --line:#272e3a; --text:#eceef3; --muted:#8791a3; --muted-2:#5c6577;
+    --accent:#8b93f0; --accent-strong:#a5abf5; --accent-soft:rgba(139,147,240,.14);
+    --accent-text:#0e1020; --teal:#4fbfa8;
+    --serif:'Fraunces', Georgia, serif;
+    --mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+    --sans:'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --maxw:820px;
+    --ease:cubic-bezier(.22,.85,.32,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 12% -8%, rgba(139,147,240,.08), transparent 60%),
+      radial-gradient(ellipse 800px 500px at 88% 8%, rgba(79,191,168,.06), transparent 55%),
+      var(--bg);
+    color:var(--text); font-family:var(--sans); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:rgba(13,16,23,.75);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1160px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-mark{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:19px;font-weight:600;text-decoration:none;}
+  .nav-mark svg{width:30px;height:30px;flex-shrink:0;}
+  .nav-links{display:flex;gap:22px;font-family:var(--mono);font-size:13px;}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .15s;}
+  .nav-links a:hover{color:var(--accent);}
+  .nav-links a.current{color:var(--accent-strong);}
+  @media (max-width:560px){ .nav-links{display:none;} }
+
+  main{padding:64px 0 90px;}
+
+  .r-head{margin-bottom:36px;}
+  .r-name{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,44px);margin:0 0 6px;letter-spacing:-.01em;}
+  .r-role{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--accent-strong);margin:0 0 14px;}
+  .r-contact{
+    display:flex;flex-wrap:wrap;gap:8px 16px;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    padding-bottom:20px;border-bottom:1px solid var(--line);
+  }
+  .r-contact a{text-decoration:none;color:var(--muted);transition:color .15s;}
+  .r-contact a:hover{color:var(--accent-strong);}
+  .r-contact .ph{color:var(--muted-2);font-style:italic;}
+
+  .r-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+  .btn{
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;
+    padding:11px 20px;border-radius:10px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+    transition:transform .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(0,0,0,.5);}
+  .btn-primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600;}
+  .btn-primary:hover{background:var(--accent-strong);}
+  .btn-ghost{color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  section.r-section{margin-top:40px;}
+  .r-section-title{
+    font-family:var(--mono);font-size:12px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:.09em;
+    display:flex;align-items:center;gap:12px;margin-bottom:16px;
+  }
+  .r-section-title::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  .r-entry{margin-bottom:18px;}
+  .r-entry:last-child{margin-bottom:0;}
+  .r-entry-title{font-weight:600;font-size:15.5px;color:var(--text);margin:0 0 4px;}
+  .r-entry-desc{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 6px;}
+  .r-tech{font-family:var(--mono);font-size:12px;color:var(--muted-2);}
+  .r-tech b{color:var(--muted);font-weight:500;}
+
+  .r-skill-line{margin-bottom:10px;font-size:14px;color:var(--muted);}
+  .r-skill-line b{color:var(--text);font-weight:600;}
+
+  .r-cert{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:9px 0;border-top:1px solid var(--line);font-size:14px;
+  }
+  .r-cert:first-child{border-top:none;}
+  .r-cert-name{color:var(--text);}
+  .r-cert-issuer{color:var(--muted);font-size:12.5px;}
+  .r-cert-date{font-family:var(--mono);font-size:12px;color:var(--muted-2);white-space:nowrap;}
+
+  .r-note{
+    margin-top:8px;font-size:12px;color:var(--muted-2);
+    background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+  }
+
+  footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted-2);font-family:var(--mono);font-size:12.5px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-mark">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+        <text x="16" y="22" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="16" font-weight="600" fill="var(--accent-strong)">La</text>
+      </svg>
+      Lamya
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Portfolio</a>
+      <a href="index.html#work">Work</a>
+      <a href="resume.html" class="current">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="r-head">
+      <h1 class="r-name">Lamya Alabdullatif</h1>
+      <p class="r-role">Computer Engineering Student</p>
+      <div class="r-contact">
+        <span class="ph">[ Add phone number ]</span>
+        <span>·</span>
+        <a href="mailto:lamyau092@gmail.com">lamyau092@gmail.com</a>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/lamya-alabdullati" target="_blank" rel="noopener">linkedin.com/in/lamya-alabdullati</a>
+        <span>·</span>
+        <a href="https://github.com/Lamya-Alabdullatif" target="_blank" rel="noopener">github.com/Lamya-Alabdullatif</a>
+      </div>
+      <div class="r-actions">
+        <a class="btn btn-primary" href="assets/files/Lamya_Abdulatif_Resume.docx" download>Download Word (.docx) ↓</a>
+        <a class="btn btn-ghost" href="index.html">← Back to portfolio</a>
+      </div>
+    </div>
+
+    <section class="r-section">
+      <div class="r-section-title">Professional Summary</div>
+      <p class="r-entry-desc" style="color:var(--text);font-size:14.5px;">
+        Computer Engineering student at Qassim University (expected graduation: 2026) with a strong foundation in software development, artificial intelligence, cloud computing, and data analytics. Experienced in building AI-powered RAG applications, cloud-deployed infrastructure, and embedded systems, with strong analytical, problem-solving, and teamwork skills. Eager to contribute to innovative organizations while continuously growing as an engineer.
+      </p>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Graduation Project</div>
+      <div class="r-entry">
+        <p class="r-entry-title">Physical Kubernetes Cluster</p>
+        <p class="r-entry-desc">Designed and deployed a 3-node bare-metal Kubernetes cluster on Raspberry Pi hardware running PostgreSQL with NFS shared storage, studying real-world orchestration, networking, and data persistence beyond typical cloud abstractions.</p>
+        <p class="r-tech"><b>Technologies:</b> Kubernetes, Raspberry Pi, PostgreSQL, NFS, Linux Networking</p>
+      </div>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">University Projects</div>
+      <div class="r-entry">
+        <p class="r-entry-title">Wireless Data Transfer (Li-Fi)</p>
+        <p class="r-entry-desc">Built a Li-Fi communication system transmitting text messages as light pulses via laser pointer, decoded through an LDR sensor with 95–100% transmission accuracy.</p>
+        <p class="r-tech"><b>Technologies:</b> Arduino, C++, Optical Communications</p>
+      </div>
+      <div class="r-entry">
+        <p class="r-entry-title">Driver Warning Device</p>
+        <p class="r-entry-desc">Designed an Arduino-powered device using a tilt sensor to monitor driver head position and trigger real-time drowsiness alerts, addressing distraction-related accidents.</p>
+        <p class="r-tech"><b>Technologies:</b> Arduino Nano, Embedded C, Circuit Design</p>
+      </div>
+      <div class="r-entry">
+        <p class="r-entry-title">3D Printed Orthosis</p>
+        <p class="r-entry-desc">Designed and manufactured a low-cost 3D-printed splint using SolidWorks and PLA thermoplastic, exploring affordable alternatives to traditional orthoses for limb injury recovery.</p>
+        <p class="r-tech"><b>Technologies:</b> SolidWorks, 3D Printing</p>
+      </div>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Personal Projects</div>
+      <div class="r-entry">
+        <p class="r-entry-title">Muhaseb AI — RAG Compliance Assistant</p>
+        <p class="r-entry-desc">Built an Arabic RAG assistant for Saudi VAT and e-invoicing compliance that grounds every answer in official ZATCA documents and includes an automated invoice compliance checker.</p>
+        <p class="r-tech"><b>Technologies:</b> Python, FastAPI, Groq / Llama 3.3, Qdrant, Hybrid Search</p>
+      </div>
+      <div class="r-entry">
+        <p class="r-entry-title">Miftah — AI Rental Agent</p>
+        <p class="r-entry-desc">Developed an AI-powered virtual agent that handles natural-language rental and property inquiries end-to-end.</p>
+        <p class="r-tech"><b>Technologies:</b> Python, LLM APIs <em>[confirm exact stack]</em></p>
+      </div>
+      <p class="r-note">Note: draft entry — send project details to confirm/expand.</p>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Technical Skills</div>
+      <p class="r-skill-line"><b>Data &amp; BI:</b> Python, Pandas, NumPy, SQL, Power BI, DAX, Excel, Data Visualization, Data Cleaning</p>
+      <p class="r-skill-line"><b>AI / LLM Engineering:</b> RAG Systems, LangChain, Hybrid Search (BM25 + Dense), Vector Search (Qdrant), Prompt Engineering, Groq / LLM APIs</p>
+      <p class="r-skill-line"><b>Cloud &amp; Infrastructure:</b> AWS Cloud Practitioner, IBM Cloud, Kubernetes, Docker / Containers, PostgreSQL</p>
+      <p class="r-skill-line"><b>Embedded &amp; Systems:</b> Arduino (Uno / Nano), C++, Circuit Design, SolidWorks, 3D Printing</p>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Languages</div>
+      <p class="r-skill-line"><b>Arabic</b> — Native &nbsp;·&nbsp; <b>English</b> — Professional Working Proficiency</p>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Certifications</div>
+      <div class="r-cert"><div><div class="r-cert-name">AWS Cloud Practitioner</div><div class="r-cert-issuer">Global Knowledge</div></div><div class="r-cert-date">Jul 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Power BI Data Analysis Bootcamp</div><div class="r-cert-issuer">IEOM Society International</div></div><div class="r-cert-date">May 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">AWS Cloud Practitioner Essentials</div><div class="r-cert-issuer">Amazon Web Services</div></div><div class="r-cert-date">Apr 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Introduction to Cloud Computing</div><div class="r-cert-issuer">IBM</div></div><div class="r-cert-date">Apr 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Python for Data Analysis: Pandas &amp; NumPy</div><div class="r-cert-issuer">Coursera</div></div><div class="r-cert-date">Mar 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Introduction to Data Analytics</div><div class="r-cert-issuer">IBM</div></div><div class="r-cert-date">Mar 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Foundations: Data, Data, Everywhere</div><div class="r-cert-issuer">Google</div></div><div class="r-cert-date">Mar 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">Data Analysis Bootcamp</div><div class="r-cert-issuer">Mufakker</div></div><div class="r-cert-date">Mar 2026</div></div>
+      <div class="r-cert"><div><div class="r-cert-name">STC Virtual Work Experience — Data Analysis</div><div class="r-cert-issuer">Misk Foundation</div></div><div class="r-cert-date">Mar 2026</div></div>
+    </section>
+
+    <section class="r-section">
+      <div class="r-section-title">Education</div>
+      <div class="r-entry">
+        <p class="r-entry-title">Bachelor of Computer Engineering</p>
+        <p class="r-entry-desc">Qassim University — Expected Graduation: 2026</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+    <span>© 2026 Lamya Alabdullatif</span>
+    <span><a href="mailto:lamyau092@gmail.com">lamyau092@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
