@@ -181,9 +181,13 @@
   }
 
   /* hero visual */
-  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
-  .mark-frame{
+  .hero-visual{display:flex;justify-content:center;align-items:center;padding-bottom:34px;}
+  .visual-frame{
+    position:relative;
     width:min(320px, 78vw);
+  }
+  .mark-frame{
+    width:100%;
     aspect-ratio:1/1;
     border-radius:26px;
     overflow:hidden;
@@ -195,12 +199,13 @@
   .mark-frame img{width:100%;height:100%;object-fit:cover;}
   .float-card{
     position:absolute;
-    bottom:-22px; left:-22px;
+    bottom:-30px; left:-18px;
     background:var(--surface-2);
     border:1px solid var(--line);
     border-radius:12px;
     padding:12px 14px;
     width:220px;
+    max-width:calc(100% + 36px);
     box-shadow:0 20px 40px -14px rgba(0,0,0,.6);
   }
   @media (max-width:900px){ .float-card{left:50%;transform:translateX(-50%);bottom:-26px;} }
@@ -449,12 +454,14 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="mark-frame"><img src="assets/monogram.jpeg" alt="Lamya Alabdullatif monogram"></div>
-        <div class="float-card">
-          <div class="fc-title">[ CAPABILITY — VERIFIED ]</div>
-          <div class="fc-row"><span>Data &amp; Power BI</span><span>●</span></div>
-          <div class="fc-row"><span>RAG / LLM Systems</span><span>●</span></div>
-          <div class="fc-row"><span>Cloud &amp; Embedded</span><span>●</span></div>
+        <div class="visual-frame">
+          <div class="mark-frame"><img src="assets/monogram.jpeg" alt="Lamya Alabdullatif monogram"></div>
+          <div class="float-card">
+            <div class="fc-title">[ CAPABILITY — VERIFIED ]</div>
+            <div class="fc-row"><span>Data &amp; Power BI</span><span>●</span></div>
+            <div class="fc-row"><span>RAG / LLM Systems</span><span>●</span></div>
+            <div class="fc-row"><span>Cloud &amp; Embedded</span><span>●</span></div>
+          </div>
         </div>
       </div>
     </div>
