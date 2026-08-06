@@ -94,7 +94,6 @@
     text-decoration:none;
   }
   .nav-mark img{width:30px;height:30px;border-radius:7px;object-fit:cover;}
-  .nav-mark-svg{width:30px;height:30px;flex-shrink:0;}
   .nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:13px;}
   .nav-links a{position:relative;text-decoration:none;color:var(--muted);transition:color .15s;padding-bottom:3px;}
   .nav-links a::after{
@@ -198,6 +197,16 @@
     text-align:right;
     color:var(--accent-strong);
   }
+  .hero-role-en{
+    font-family:var(--serif);
+    font-size:clamp(20px, 2.4vw, 26px);
+    font-weight:500;
+    font-style:italic;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--accent-strong);
+    margin:0 0 22px;
+  }
   .hero-bio{
     font-size:17px;
     color:#c7cdd6;
@@ -242,22 +251,7 @@
     position:relative;
     box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
   }
-  .mark-frame img,.mark-frame-svg{width:100%;height:100%;object-fit:cover;display:block;}
-  .float-card{
-    position:absolute;
-    bottom:-30px; left:-18px;
-    background:var(--surface-2);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:12px 14px;
-    width:220px;
-    max-width:calc(100% + 36px);
-    box-shadow:0 20px 40px -14px rgba(0,0,0,.6);
-  }
-  @media (max-width:900px){ .float-card{left:50%;transform:translateX(-50%);bottom:-26px;} }
-  .float-card .fc-title{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:8px;letter-spacing:.04em;}
-  .fc-row{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11.5px;margin-bottom:5px;}
-  .fc-row span:last-child{color:var(--teal);}
+  .mark-frame img{width:100%;height:100%;object-fit:cover;display:block;}
 
   /* ---------- capability strip ---------- */
   .strip{
@@ -478,17 +472,11 @@
   .hero-meta{animation:rise .7s var(--ease) .26s both;}
   .hero-visual{animation:rise .8s var(--ease) .18s both;}
 
-  /* gentle float for the floating card */
-  @keyframes drift{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
-  .float-card{animation:drift 5.5s ease-in-out infinite;}
-  @media (max-width:900px){ .float-card{animation:none;} }
-
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
     html{scroll-behavior:auto;}
     .status-chip .dot{animation:none;}
     .status-chip,h1.hero-name,.hero-role,.hero-bio,.hero-cta,.hero-meta,.hero-visual{animation:none;opacity:1;transform:none;}
-    .float-card{animation:none;}
   }
 </style>
 </head>
@@ -497,10 +485,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-mark">
-      <svg class="nav-mark-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
-        <text x="16" y="22" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="16" font-weight="600" fill="var(--accent-strong)">La</text>
-      </svg>
+      <img src="assets/monogram.jpeg" alt="Lamya Alabdullatif logo">
       Lamya
     </a>
     <nav class="nav-links">
@@ -521,7 +506,7 @@
         <div class="status-chip"><span class="dot"></span>Open to opportunities</div>
         <p class="hero-name-en" dir="rtl">لميا عبد اللطيف</p>
         <h1 class="hero-name">Lamya Alabdullatif</h1>
-        <p class="hero-role" dir="rtl">هندسة حاسب</p>
+        <p class="hero-role hero-role-en">Computer Engineering</p>
         <p class="hero-bio">Computer Engineering student focused on data analysis and applied generative AI. I build tools that turn messy data into clear decisions — from interactive <em>Power BI</em> dashboards to source‑grounded Arabic <em>RAG</em> systems, and a bare‑metal Kubernetes cluster as my graduation project.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#work">View selected work ↓</a>
@@ -533,29 +518,7 @@
       <div class="hero-visual">
         <div class="visual-frame">
           <div class="mark-frame">
-            <svg class="mark-frame-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#1d233a"/>
-                  <stop offset="55%" stop-color="#161b25"/>
-                  <stop offset="100%" stop-color="#132621"/>
-                </linearGradient>
-                <radialGradient id="markGlow" cx="30%" cy="20%" r="70%">
-                  <stop offset="0%" stop-color="#8b93f0" stop-opacity=".28"/>
-                  <stop offset="100%" stop-color="#8b93f0" stop-opacity="0"/>
-                </radialGradient>
-              </defs>
-              <rect width="320" height="320" fill="url(#markGrad)"/>
-              <rect width="320" height="320" fill="url(#markGlow)"/>
-              <text x="160" y="205" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="150" font-style="italic" font-weight="500" fill="#eceef3">La</text>
-              <circle cx="252" cy="90" r="4" fill="#4fbfa8"/>
-            </svg>
-          </div>
-          <div class="float-card">
-            <div class="fc-title">[ CAPABILITY — VERIFIED ]</div>
-            <div class="fc-row"><span>Data &amp; Power BI</span><span>●</span></div>
-            <div class="fc-row"><span>RAG / LLM Systems</span><span>●</span></div>
-            <div class="fc-row"><span>Cloud &amp; Embedded</span><span>●</span></div>
+            <img src="assets/monogram.jpeg" alt="Lamya Alabdullatif monogram logo">
           </div>
         </div>
       </div>
