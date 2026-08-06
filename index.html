@@ -328,59 +328,56 @@
   .feature-stat{font-family:var(--mono);font-size:13px;color:var(--teal);margin:0 0 15px;}
   .feature-desc{color:var(--muted);font-size:15px;line-height:1.7;margin:0 0 22px;}
 
-  /* project grid */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
+  /* project grid — image-forward editorial style */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 32px;}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr;gap:38px;} }
 
   .card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:18px;
-    overflow:hidden;
+    background:transparent;
+    border:none;
     display:flex;flex-direction:column;
-    transition:border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+    transition:transform .3s var(--ease);
   }
-  .card:hover{border-color:#333c4c;transform:translateY(-4px);box-shadow:0 22px 46px -20px rgba(0,0,0,.6);}
+  .card:hover{transform:translateY(-3px);}
   .card-media{
-    position:relative;aspect-ratio:16/9;overflow:hidden;background:#0d1116;
-    border-bottom:1px solid var(--line);
+    position:relative;aspect-ratio:4/3;overflow:hidden;background:#0d1116;
+    border-radius:14px;
     cursor:zoom-in;
   }
   .card-media img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s var(--ease);}
-  .card:hover .card-media img{transform:scale(1.04);}
+  .card:hover .card-media img{transform:scale(1.035);}
   .card-tag{
-    position:absolute;top:10px;left:10px;
+    position:absolute;top:12px;left:12px;
     font-family:var(--mono);font-size:11px;color:var(--bg);
     background:var(--accent);
     padding:3px 8px;border-radius:5px;font-weight:600;
   }
-  .card-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;}
-  .card-title{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 9px;}
+  .card-body{padding:18px 2px 0;display:flex;flex-direction:column;flex:1;}
+  .card-title{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 7px;}
   .card-stat{
     font-family:var(--mono);font-size:12.5px;color:var(--teal);
-    margin:0 0 12px;
+    margin:0 0 10px;
   }
-  .card-desc{color:var(--muted);font-size:14.2px;margin:0 0 18px;flex:1;}
-  .chip-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;}
-  .chip{
-    font-family:var(--mono);font-size:11px;color:var(--muted);
-    border:1px solid var(--line);padding:4px 9px;border-radius:6px;
+  .card-desc{color:var(--muted);font-size:14px;margin:0 0 12px;flex:1;line-height:1.55;}
+  .card-tech{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted-2);
+    letter-spacing:.02em;
+    margin:0 0 14px;
   }
   .card-actions{
-    display:flex;gap:10px;flex-wrap:wrap;
-    padding-top:16px;border-top:1px solid var(--line);
+    display:flex;gap:18px;flex-wrap:wrap;
     margin-top:auto;
   }
   .card-action{
-    font-family:var(--mono);font-size:12.5px;
-    text-decoration:none;display:inline-flex;align-items:center;gap:6px;
-    padding:9px 14px;border-radius:8px;border:1px solid var(--line);
-    color:var(--text);
-    transition:border-color .18s var(--ease), color .18s var(--ease), background .18s var(--ease), transform .18s var(--ease);
+    font-family:var(--mono);font-size:12.5px;font-weight:500;
+    text-decoration:none;display:inline-flex;align-items:center;gap:5px;
+    padding:0;border:none;background:none;
+    color:var(--muted);
+    transition:color .18s var(--ease), gap .18s var(--ease);
   }
-  .card-action.primary{background:var(--accent-soft);border-color:rgba(139,147,240,.4);color:var(--accent-strong);}
-  .card-action:hover{transform:translateY(-1px);border-color:var(--accent);color:var(--accent-strong);}
-  .card-action svg{width:13px;height:13px;transition:transform .15s var(--ease);}
+  .card-action.primary{color:var(--accent-strong);}
+  .card-action:hover{color:var(--accent-strong);gap:8px;}
+  .card-action svg{width:12px;height:12px;transition:transform .15s var(--ease);}
   .card-action:hover svg{transform:translate(2px,-2px);}
 
   /* ---------- skills ---------- */
@@ -592,7 +589,7 @@
           <h3 class="feature-title">Physical Kubernetes Cluster</h3>
           <p class="feature-stat">→ 3-node bare-metal cluster running stateful workloads</p>
           <p class="feature-desc">My senior capstone: designed and deployed a Kubernetes cluster on Raspberry Pi hardware running PostgreSQL with NFS shared storage — moving past cloud abstractions to study orchestration, networking, and persistence on real hardware.</p>
-          <div class="chip-row"><span class="chip">Kubernetes</span><span class="chip">Raspberry Pi</span><span class="chip">PostgreSQL</span><span class="chip">NFS</span><span class="chip">Linux Networking</span></div>
+          <p class="card-tech">Kubernetes · Raspberry Pi · PostgreSQL · NFS · Linux Networking</p>
           <div class="card-actions" style="border-top:none;padding-top:0;">
             <a class="card-action primary js-lightbox" href="assets/projects/full-kubernetes.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
@@ -609,7 +606,7 @@
             <h3 class="card-title">Wireless Data Transfer (Li-Fi)</h3>
             <p class="card-stat">→ 95–100% transmission accuracy</p>
             <p class="card-desc">Built a Li-Fi communication system transmitting text messages as light pulses via laser pointer, received and decoded through an LDR sensor and displayed on an LCD.</p>
-            <div class="chip-row"><span class="chip">Arduino</span><span class="chip">C++</span><span class="chip">Optical Comms</span></div>
+            <p class="card-tech">Arduino · C++ · Optical Comms</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/full-lifi.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
@@ -622,7 +619,7 @@
             <h3 class="card-title">Driver Warning Device</h3>
             <p class="card-stat">→ Real-time drowsiness alerts</p>
             <p class="card-desc">Arduino-powered device using a tilt sensor to monitor driver head position and trigger a buzzer alert, addressing distraction- and drowsiness-related accidents.</p>
-            <div class="chip-row"><span class="chip">Arduino Nano</span><span class="chip">Embedded C</span><span class="chip">Circuit Design</span></div>
+            <p class="card-tech">Arduino Nano · Embedded C · Circuit Design</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/full-driver-warning.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Driver-Warning-Device" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -636,7 +633,7 @@
             <h3 class="card-title">3D Printed Orthosis</h3>
             <p class="card-stat">→ Low-cost splint concept for limb injury recovery</p>
             <p class="card-desc">Designed and manufactured a novel 3D-printed splint using SolidWorks and PLA thermoplastic, exploring low-cost alternatives to traditional orthoses.</p>
-            <div class="chip-row"><span class="chip">SolidWorks</span><span class="chip">3D Printing</span></div>
+            <p class="card-tech">SolidWorks · 3D Printing</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/full-orthosis.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
@@ -655,7 +652,7 @@
             <h3 class="card-title">مُحاسب — Muhaseb AI</h3>
             <p class="card-stat">→ Cites the exact ZATCA article for every answer</p>
             <p class="card-desc">Arabic RAG assistant for Saudi VAT &amp; e-invoicing compliance. Answers are grounded in official ZATCA documents and refuse to answer out of scope — plus an invoice compliance checker.</p>
-            <div class="chip-row"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Groq · Llama 3.3</span><span class="chip">Qdrant</span><span class="chip">Hybrid Search</span></div>
+            <p class="card-tech">Python · FastAPI · Groq · Llama 3.3 · Qdrant · Hybrid Search</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/muhaseb-hero.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/muhaseb-ai-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -669,7 +666,7 @@
             <h3 class="card-title">Legal RAG — Labor Law Assistant</h3>
             <p class="card-stat">→ Recall@10: 97.8% · 100% precision on flagged claims</p>
             <p class="card-desc">RAG system answering questions on Saudi Labor &amp; Social Insurance Law, with a sentence-level grounding/hallucination check and a reproducible evaluation suite.</p>
-            <div class="chip-row"><span class="chip">Python</span><span class="chip">LangChain</span><span class="chip">Streamlit</span><span class="chip">Hybrid Retrieval</span></div>
+            <p class="card-tech">Python · LangChain · Streamlit · Hybrid Retrieval</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/legal-rag-1.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/legal-rag-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -683,7 +680,7 @@
             <h3 class="card-title">Google Play Store Analytics</h3>
             <p class="card-stat">→ 11,500 apps · $590M+ in tracked revenue</p>
             <p class="card-desc">Interactive Power BI dashboard analyzing app installs, revenue, ratings and category trends, built on a fully documented Excel data-cleaning pipeline.</p>
-            <div class="chip-row"><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">Data Cleaning</span></div>
+            <p class="card-tech">Power BI · Excel · Data Cleaning</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/google-play.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/google-play-store-analytics-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -697,7 +694,7 @@
             <h3 class="card-title">Gaming Market Insights</h3>
             <p class="card-stat">→ Platform, genre &amp; publisher sales trends</p>
             <p class="card-desc">Exploratory analysis of global video game sales — platform performance, genre trends, and the relationship between critic scores and sales.</p>
-            <div class="chip-row"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Seaborn</span></div>
+            <p class="card-tech">Python · Pandas · Seaborn</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/gaming-insights.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Gaming-Market-Insights" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -711,7 +708,7 @@
             <h3 class="card-title">Nike Performance Dashboard</h3>
             <p class="card-stat">→ 1.28M revenue across 1,200+ orders</p>
             <p class="card-desc">Global sales dashboard tracking revenue, profit, and unit performance across products, categories, and regions.</p>
-            <div class="chip-row"><span class="chip">Power BI</span><span class="chip">Excel</span></div>
+            <p class="card-tech">Power BI · Excel</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/nike.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/nike-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -725,7 +722,7 @@
             <h3 class="card-title">Zara Sales Dashboard</h3>
             <p class="card-stat">→ 1.92M revenue · 30% profit margin</p>
             <p class="card-desc">Category-level revenue and profitability analysis for a 2025 retail sales dataset, with month-over-month tracking.</p>
-            <div class="chip-row"><span class="chip">Power BI</span></div>
+            <p class="card-tech">Power BI</p>
             <div class="card-actions">
               <a class="card-action primary js-lightbox" href="assets/projects/zara.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/zara-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
