@@ -295,9 +295,9 @@
   .subgroup-label::after{content:"";flex:1;height:1px;background:var(--line);}
   .subgroup-label:first-of-type{margin-top:0;}
 
-  /* graduation project — distinct featured showcase, stacked & spacious */
+  /* graduation project — image gallery beside text, both sides spacious */
   .feature-project{
-    display:flex;flex-direction:column;
+    display:grid;grid-template-columns:1.05fr 1.15fr;
     background:linear-gradient(160deg, var(--surface) 0%, var(--surface-2) 100%);
     border:1px solid var(--line);
     border-radius:24px;
@@ -307,10 +307,13 @@
   }
   .feature-project:hover{border-color:#3b4159;box-shadow:0 34px 70px -28px rgba(0,0,0,.65);}
   .feature-gallery{display:flex;flex-direction:column;gap:2px;background:var(--line);}
-  .feature-media{position:relative;overflow:hidden;cursor:zoom-in;}
-  .feature-media img{width:100%;height:auto;display:block;transition:transform .6s var(--ease);}
-  .feature-media:hover img{transform:scale(1.02);}
-  .feature-body{padding:48px 52px 52px;}
+  .feature-media{position:relative;overflow:hidden;cursor:zoom-in;flex:1;min-height:200px;}
+  .feature-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease);}
+  .feature-media:hover img{transform:scale(1.025);}
+  @media (max-width:860px){
+    .feature-project{grid-template-columns:1fr;}
+  }
+  .feature-body{padding:48px 48px 52px;display:flex;flex-direction:column;justify-content:center;}
   @media (max-width:640px){ .feature-body{padding:32px 26px 36px;} }
   .feature-badge{
     display:inline-flex;align-items:center;gap:7px;width:fit-content;
@@ -319,7 +322,7 @@
     padding:7px 14px;border-radius:999px;margin-bottom:20px;
   }
   .feature-badge svg{width:14px;height:14px;}
-  .feature-title{font-family:var(--serif);font-weight:600;font-size:clamp(30px,3.6vw,42px);margin:0 0 14px;letter-spacing:-.01em;}
+  .feature-title{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.2vw,38px);margin:0 0 14px;letter-spacing:-.01em;}
   .feature-stat{font-family:var(--mono);font-size:15px;color:var(--teal);margin:0 0 18px;}
   .feature-desc{color:var(--muted);font-size:18px;line-height:1.75;margin:0 0 26px;max-width:70ch;}
 
