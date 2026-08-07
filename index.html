@@ -302,7 +302,7 @@
     border:1px solid var(--line);
     border-radius:24px;
     overflow:hidden;
-    margin-bottom:12px;
+    margin-bottom:32px;
     transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
   }
   .feature-project:hover{border-color:#3b4159;box-shadow:0 34px 70px -28px rgba(0,0,0,.65);}
@@ -613,58 +613,73 @@
 
       <!-- University projects -->
       <div class="subgroup-label reveal">University Projects</div>
-      <div class="grid">
 
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/lifi-demo.jpeg"><span class="card-tag">P-02</span><img src="assets/projects/lifi-demo.jpeg" alt="Li-Fi receiver breadboard showing 'LiFi Ready' on LCD, laser transmitter in background"></div>
-          <div class="card-body">
-            <h3 class="card-title">Wireless Data Transfer (Li-Fi)</h3>
-            <p class="card-stat">→ 95–100% transmission accuracy</p>
-            <p class="card-desc">Built a Li-Fi communication system transmitting text messages as light pulses via laser pointer, received and decoded through an LDR sensor and displayed on an LCD.</p>
-            <p class="card-tech">Arduino · C++ · Optical Comms</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/lifi-demo.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action js-lightbox" href="assets/projects/lifi-circuit.jpeg">Circuit Diagram <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/lifi-demo.jpeg">
+            <span class="card-tag">P-02</span>
+            <img src="assets/projects/lifi-demo.jpeg" alt="Li-Fi receiver breadboard showing 'LiFi Ready' on LCD, laser transmitter in background">
           </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/driver-warning-demo.jpeg"><span class="card-tag">P-03</span><img src="assets/projects/driver-warning-demo.jpeg" alt="Driver warning device breadboard with tilt sensor, buzzer, and Arduino Nano"></div>
-          <div class="card-body">
-            <h3 class="card-title">Driver Warning Device</h3>
-            <p class="card-stat">→ Real-time drowsiness alerts</p>
-            <p class="card-desc">Arduino-powered device using a tilt sensor to monitor driver head position and trigger a buzzer alert, addressing distraction- and drowsiness-related accidents.</p>
-            <p class="card-tech">Arduino Nano · Embedded C · Circuit Design</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/driver-warning-demo.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action js-lightbox" href="assets/projects/driver-warning-circuit.jpeg">Circuit Diagram <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Driver-Warning-Device" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><path d="M2 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>University Project</span>
+          <h3 class="feature-title">Wireless Data Transfer (Li-Fi)</h3>
+          <p class="feature-stat">→ 95–100% transmission accuracy</p>
+          <p class="feature-desc">Built a Li-Fi communication system transmitting text messages as light pulses via laser pointer, received and decoded through an LDR sensor and displayed on an LCD.</p>
+          <p class="card-tech">Arduino · C++ · Optical Comms</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/lifi-demo.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action js-lightbox" href="assets/projects/lifi-circuit.jpeg">Circuit Diagram <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/orthosis-print.jpeg"><span class="card-tag">P-04</span><img src="assets/projects/orthosis-print.jpeg" alt="Blue PLA 3D-printed orthosis on the Ender 3D printer bed" style="object-position:center 30%;"></div>
-          <div class="card-body">
-            <h3 class="card-title">3D Printed Orthosis</h3>
-            <p class="card-stat">→ Low-cost splint concept for limb injury recovery</p>
-            <p class="card-desc">Designed and manufactured a novel 3D-printed splint using SolidWorks and PLA thermoplastic, exploring low-cost alternatives to traditional orthoses.</p>
-            <p class="card-tech">SolidWorks · 3D Printing</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/orthosis-print.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/driver-warning-demo.jpeg">
+            <span class="card-tag">P-03</span>
+            <img src="assets/projects/driver-warning-demo.jpeg" alt="Driver warning device breadboard with tilt sensor, buzzer, and Arduino Nano">
           </div>
-        </article>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><path d="M2 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>University Project</span>
+          <h3 class="feature-title">Driver Warning Device</h3>
+          <p class="feature-stat">→ Real-time drowsiness alerts</p>
+          <p class="feature-desc">Arduino-powered device using a tilt sensor to monitor driver head position and trigger a buzzer alert, addressing distraction- and drowsiness-related accidents.</p>
+          <p class="card-tech">Arduino Nano · Embedded C · Circuit Design</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/driver-warning-demo.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action js-lightbox" href="assets/projects/driver-warning-circuit.jpeg">Circuit Diagram <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Driver-Warning-Device" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
 
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/orthosis-print.jpeg">
+            <span class="card-tag">P-04</span>
+            <img src="assets/projects/orthosis-print.jpeg" alt="Blue PLA 3D-printed orthosis on the Ender 3D printer bed" style="object-position:center 30%;">
+          </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><path d="M2 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>University Project</span>
+          <h3 class="feature-title">3D Printed Orthosis</h3>
+          <p class="feature-stat">→ Low-cost splint concept for limb injury recovery</p>
+          <p class="feature-desc">Designed and manufactured a novel 3D-printed splint using SolidWorks and PLA thermoplastic, exploring low-cost alternatives to traditional orthoses.</p>
+          <p class="card-tech">SolidWorks · 3D Printing</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/orthosis-print.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
       </div>
 
       <!-- Personal projects -->
       <div class="subgroup-label reveal">Personal Projects</div>
-      <div class="grid">
 
-        <article class="card reveal">
-          <div class="card-media media-carousel" data-carousel="muhaseb">
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media media-carousel" data-carousel="muhaseb">
             <span class="card-tag">P-05</span>
             <video class="carousel-slide is-active" src="assets/projects/muhaseb-demo.mp4" muted playsinline autoplay data-slide="0"></video>
             <img class="carousel-slide" src="assets/projects/muhaseb-shot1.png" alt="Muhaseb AI refusing an out-of-scope question (Egypt VAT)" data-slide="1">
@@ -675,20 +690,23 @@
               <span class="dot-ind is-active"></span><span class="dot-ind"></span><span class="dot-ind"></span><span class="dot-ind"></span><span class="dot-ind"></span>
             </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">Muhaseb AI</h3>
-            <p class="card-stat">→ Cites the exact ZATCA article for every answer</p>
-            <p class="card-desc">Arabic RAG assistant for Saudi VAT &amp; e-invoicing compliance. Answers are grounded in official ZATCA documents and refuse to answer out of scope — plus an invoice compliance checker.</p>
-            <p class="card-tech">Python · FastAPI · Groq · Llama 3.3 · Qdrant · Hybrid Search</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/muhaseb-shot2.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/muhaseb-ai-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Muhaseb AI</h3>
+          <p class="feature-stat">→ Cites the exact ZATCA article for every answer</p>
+          <p class="feature-desc">Arabic RAG assistant for Saudi VAT &amp; e-invoicing compliance. Answers are grounded in official ZATCA documents and refuse to answer out of scope — plus an invoice compliance checker.</p>
+          <p class="card-tech">Python · FastAPI · Groq · Llama 3.3 · Qdrant · Hybrid Search</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/muhaseb-shot2.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/muhaseb-ai-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <article class="card reveal">
-          <div class="card-media media-carousel" data-carousel="legal-rag">
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media media-carousel" data-carousel="legal-rag">
             <span class="card-tag">P-06</span>
             <video class="carousel-slide is-active" src="assets/projects/legal-rag-demo.mp4" muted playsinline autoplay data-slide="0"></video>
             <img class="carousel-slide" src="assets/projects/legal-rag-shot1.png" alt="Legal RAG chat with grounding, reranking, and source citations" data-slide="1">
@@ -696,20 +714,23 @@
               <span class="dot-ind is-active"></span><span class="dot-ind"></span>
             </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">Legal RAG — Labor Law Assistant</h3>
-            <p class="card-stat">→ Recall@10: 97.8% · 100% precision on flagged claims</p>
-            <p class="card-desc">RAG system answering questions on Saudi Labor &amp; Social Insurance Law, with a sentence-level grounding/hallucination check and a reproducible evaluation suite.</p>
-            <p class="card-tech">Python · LangChain · Streamlit · Hybrid Retrieval</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/legal-rag-shot1.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/legal-rag-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Legal RAG — Labor Law Assistant</h3>
+          <p class="feature-stat">→ Recall@10: 97.8% · 100% precision on flagged claims</p>
+          <p class="feature-desc">RAG system answering questions on Saudi Labor &amp; Social Insurance Law, with a sentence-level grounding/hallucination check and a reproducible evaluation suite.</p>
+          <p class="card-tech">Python · LangChain · Streamlit · Hybrid Retrieval</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/legal-rag-shot1.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/legal-rag-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <article class="card reveal">
-          <div class="card-media media-carousel" data-carousel="google-play">
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media media-carousel" data-carousel="google-play">
             <span class="card-tag">P-07</span>
             <video class="carousel-slide is-active" src="assets/projects/google-play-demo.mp4" muted playsinline autoplay data-slide="0"></video>
             <img class="carousel-slide" src="assets/projects/google-play.png" alt="Google Play Store analytics Power BI dashboard" data-slide="1">
@@ -717,61 +738,80 @@
               <span class="dot-ind is-active"></span><span class="dot-ind"></span>
             </div>
           </div>
-          <div class="card-body">
-            <h3 class="card-title">Google Play Store Analytics</h3>
-            <p class="card-stat">→ 11,500 apps · $590M+ in tracked revenue</p>
-            <p class="card-desc">Interactive Power BI dashboard analyzing app installs, revenue, ratings and category trends, built on a fully documented Excel data-cleaning pipeline.</p>
-            <p class="card-tech">Power BI · Excel · Data Cleaning</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/google-play.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/google-play-store-analytics-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Google Play Store Analytics</h3>
+          <p class="feature-stat">→ 11,500 apps · $590M+ in tracked revenue</p>
+          <p class="feature-desc">Interactive Power BI dashboard analyzing app installs, revenue, ratings and category trends, built on a fully documented Excel data-cleaning pipeline.</p>
+          <p class="card-tech">Power BI · Excel · Data Cleaning</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/google-play.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/google-play-store-analytics-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/gaming-insights.png"><span class="card-tag">P-08</span><img src="assets/projects/gaming-insights.png" alt="Top platforms by global game sales chart"></div>
-          <div class="card-body">
-            <h3 class="card-title">Gaming Market Insights</h3>
-            <p class="card-stat">→ Platform, genre &amp; publisher sales trends</p>
-            <p class="card-desc">Exploratory analysis of global video game sales — platform performance, genre trends, and the relationship between critic scores and sales.</p>
-            <p class="card-tech">Python · Pandas · Seaborn</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/gaming-insights.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Gaming-Market-Insights" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/nike.jpeg"><span class="card-tag">P-09</span><img src="assets/projects/nike.jpeg" alt="Nike global performance Power BI dashboard"></div>
-          <div class="card-body">
-            <h3 class="card-title">Nike Performance Dashboard</h3>
-            <p class="card-stat">→ 1.28M revenue across 1,200+ orders</p>
-            <p class="card-desc">Global sales dashboard tracking revenue, profit, and unit performance across products, categories, and regions.</p>
-            <p class="card-tech">Power BI · Excel</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/nike.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/nike-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/zara.png"><span class="card-tag">P-10</span><img src="assets/projects/zara.png" alt="Zara product sales Power BI dashboard"></div>
-          <div class="card-body">
-            <h3 class="card-title">Zara Sales Dashboard</h3>
-            <p class="card-stat">→ 1.92M revenue · 30% profit margin</p>
-            <p class="card-desc">Category-level revenue and profitability analysis for a 2025 retail sales dataset, with month-over-month tracking.</p>
-            <p class="card-tech">Power BI</p>
-            <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/zara.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/zara-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </div>
-        </article>
-
+        </div>
       </div>
+
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/gaming-insights.png">
+            <span class="card-tag">P-08</span>
+            <img src="assets/projects/gaming-insights.png" alt="Top platforms by global game sales chart">
+          </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Gaming Market Insights</h3>
+          <p class="feature-stat">→ Platform, genre &amp; publisher sales trends</p>
+          <p class="feature-desc">Exploratory analysis of global video game sales — platform performance, genre trends, and the relationship between critic scores and sales.</p>
+          <p class="card-tech">Python · Pandas · Seaborn</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/gaming-insights.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/Gaming-Market-Insights" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-project reveal">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/nike.jpeg">
+            <span class="card-tag">P-09</span>
+            <img src="assets/projects/nike.jpeg" alt="Nike global performance Power BI dashboard">
+          </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Nike Performance Dashboard</h3>
+          <p class="feature-stat">→ 1.28M revenue across 1,200+ orders</p>
+          <p class="feature-desc">Global sales dashboard tracking revenue, profit, and unit performance across products, categories, and regions.</p>
+          <p class="card-tech">Power BI · Excel</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/nike.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/nike-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-project reveal" style="margin-bottom:12px;">
+        <div class="feature-gallery">
+          <div class="feature-media js-lightbox" data-full="assets/projects/zara.png">
+            <span class="card-tag">P-10</span>
+            <img src="assets/projects/zara.png" alt="Zara product sales Power BI dashboard">
+          </div>
+        </div>
+        <div class="feature-body">
+          <span class="feature-badge"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Personal Project</span>
+          <h3 class="feature-title">Zara Sales Dashboard</h3>
+          <p class="feature-stat">→ 1.92M revenue · 30% profit margin</p>
+          <p class="feature-desc">Category-level revenue and profitability analysis for a 2025 retail sales dataset, with month-over-month tracking.</p>
+          <p class="card-tech">Power BI</p>
+          <div class="card-actions" style="border-top:none;padding-top:0;">
+            <a class="card-action primary js-lightbox" href="assets/projects/zara.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="card-action" href="https://github.com/Lamya-Alabdullatif/zara-powerbi-dashboard" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
