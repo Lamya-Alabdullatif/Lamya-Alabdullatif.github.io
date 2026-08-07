@@ -688,14 +688,21 @@
         </article>
 
         <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/legal-rag-1.jpeg"><span class="card-tag">P-06</span><img src="assets/projects/legal-rag-1.jpeg" alt="Legal RAG chat with grounding rate and citations"></div>
+          <div class="card-media media-carousel" data-carousel="legal-rag">
+            <span class="card-tag">P-06</span>
+            <video class="carousel-slide is-active" src="assets/projects/legal-rag-demo.mp4" muted playsinline autoplay data-slide="0"></video>
+            <img class="carousel-slide" src="assets/projects/legal-rag-shot1.png" alt="Legal RAG chat with grounding, reranking, and source citations" data-slide="1">
+            <div class="carousel-dots">
+              <span class="dot-ind is-active"></span><span class="dot-ind"></span>
+            </div>
+          </div>
           <div class="card-body">
             <h3 class="card-title">Legal RAG — Labor Law Assistant</h3>
             <p class="card-stat">→ Recall@10: 97.8% · 100% precision on flagged claims</p>
             <p class="card-desc">RAG system answering questions on Saudi Labor &amp; Social Insurance Law, with a sentence-level grounding/hallucination check and a reproducible evaluation suite.</p>
             <p class="card-tech">Python · LangChain · Streamlit · Hybrid Retrieval</p>
             <div class="card-actions">
-              <a class="card-action primary js-lightbox" href="assets/projects/legal-rag-1.jpeg">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="card-action primary js-lightbox" href="assets/projects/legal-rag-shot1.png">View Project <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
               <a class="card-action" href="https://github.com/Lamya-Alabdullatif/legal-rag-showcase" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </div>
