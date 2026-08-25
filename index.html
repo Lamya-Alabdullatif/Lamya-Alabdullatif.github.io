@@ -657,7 +657,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow"><span class="idx">02</span>Selected work</div>
-        <h2 class="section-title">Twelve projects,<br><em>source-linked.</em></h2>
+        <h2 class="section-title">Thirteen projects,<br><em>source-linked.</em></h2>
         <p class="section-sub">Every card links to a working repository, a gallery, or a project poster — nothing here is a mockup. Grouped by track: graduation project first, then coursework, applied AI, and data analysis.</p>
       </div>
 
@@ -736,7 +736,7 @@
       <!-- ===== AI Projects ===== -->
       <div class="track-header reveal">
         <h3 class="track-title"><span class="track-n">03</span>AI &amp; LLM Projects</h3>
-        <span class="track-count">4 projects</span>
+        <span class="track-count">5 projects</span>
       </div>
       <div class="grid">
 
@@ -833,6 +833,38 @@
           </div>
         </article>
 
+        <article class="card reveal" data-delay="4">
+          <div class="card-media has-gallery" data-gallery="cloudrag"><span class="card-tag">P-09</span>
+            <div class="gallery-container">
+              <div class="gallery-track" id="cloudrag-track">
+                <div class="gallery-slide js-lightbox" data-full="assets/projects/cloud-rag-1.png"><img src="assets/projects/cloud-rag-1.png" alt="Cloud AI Knowledge Assistant — upload documents panel with processed status"></div>
+                <div class="gallery-slide js-lightbox" data-full="assets/projects/cloud-rag-2.png"><img src="assets/projects/cloud-rag-2.png" alt="Cloud AI Knowledge Assistant — grounded answer with cited sources"></div>
+              </div>
+              <div class="gallery-controls">
+                <div class="gallery-dots" id="cloudrag-dots">
+                  <button class="gallery-dot active" data-index="0" aria-label="Slide 1"></button>
+                  <button class="gallery-dot" data-index="1" aria-label="Slide 2"></button>
+                </div>
+                <span class="gallery-counter"><span id="cloudrag-current">1</span>/<span id="cloudrag-total">2</span></span>
+                <div style="display:flex;gap:6px;">
+                  <button class="gallery-btn" data-gallery="cloudrag" data-action="prev" type="button" aria-label="Previous image"><svg viewBox="0 0 20 20" fill="none"><path d="M12 16L6 10l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="gallery-btn" data-gallery="cloudrag" data-action="next" type="button" aria-label="Next image"><svg viewBox="0 0 20 20" fill="none"><path d="M8 16l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Cloud AI Knowledge Assistant</h3>
+            <p class="card-stat">→ Real RAG pipeline · cited sources with page numbers · zero hallucinated answers</p>
+            <p class="card-desc">Cloud-based RAG system: upload PDFs to a private AWS S3 bucket, chunk and embed them, index in Qdrant Cloud, then ask questions and get answers grounded strictly in the retrieved context — every answer cites the exact document and page it came from.</p>
+            <p class="card-tech">FastAPI · AWS S3 · Qdrant Cloud · LangChain · Streamlit · Docker</p>
+            <div class="card-actions">
+              <span class="card-action primary" style="cursor:default;">Swipe or use arrows to browse →</span>
+              <a class="card-action" href="https://github.com/Lamya-Alabdullatif/cloud-ai-knowledge-assistant" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 20 20" fill="none"><path d="M5 15L15 5M15 5H7M15 5V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </article>
+
       </div>
 
       <!-- ===== Data Analysis Projects ===== -->
@@ -843,7 +875,7 @@
       <div class="grid grid-2">
 
         <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/google-play.png"><span class="card-tag">P-09</span><img src="assets/projects/google-play.png" alt="Google Play Store analytics Power BI dashboard"></div>
+          <div class="card-media js-lightbox" data-full="assets/projects/google-play.png"><span class="card-tag">P-10</span><img src="assets/projects/google-play.png" alt="Google Play Store analytics Power BI dashboard"></div>
           <div class="card-body">
             <h3 class="card-title">Google Play Store Analytics</h3>
             <p class="card-stat">→ 11,500 apps · $590M+ in tracked revenue</p>
@@ -857,7 +889,7 @@
         </article>
 
         <article class="card reveal" data-delay="1">
-          <div class="card-media js-lightbox" data-full="assets/projects/gaming-insights.png"><span class="card-tag">P-10</span><img src="assets/projects/gaming-insights.png" alt="Top platforms by global game sales chart"></div>
+          <div class="card-media js-lightbox" data-full="assets/projects/gaming-insights.png"><span class="card-tag">P-11</span><img src="assets/projects/gaming-insights.png" alt="Top platforms by global game sales chart"></div>
           <div class="card-body">
             <h3 class="card-title">Gaming Market Insights</h3>
             <p class="card-stat">→ Platform, genre &amp; publisher sales trends</p>
@@ -871,7 +903,7 @@
         </article>
 
         <article class="card reveal">
-          <div class="card-media js-lightbox" data-full="assets/projects/nike.jpeg"><span class="card-tag">P-11</span><img src="assets/projects/nike.jpeg" alt="Nike global performance Power BI dashboard"></div>
+          <div class="card-media js-lightbox" data-full="assets/projects/nike.jpeg"><span class="card-tag">P-12</span><img src="assets/projects/nike.jpeg" alt="Nike global performance Power BI dashboard"></div>
           <div class="card-body">
             <h3 class="card-title">Nike Performance Dashboard</h3>
             <p class="card-stat">→ 1.28M revenue across 1,200+ orders</p>
@@ -885,7 +917,7 @@
         </article>
 
         <article class="card reveal" data-delay="1">
-          <div class="card-media js-lightbox" data-full="assets/projects/zara.png"><span class="card-tag">P-12</span><img src="assets/projects/zara.png" alt="Zara product sales Power BI dashboard"></div>
+          <div class="card-media js-lightbox" data-full="assets/projects/zara.png"><span class="card-tag">P-13</span><img src="assets/projects/zara.png" alt="Zara product sales Power BI dashboard"></div>
           <div class="card-body">
             <h3 class="card-title">Zara Sales Dashboard</h3>
             <p class="card-stat">→ 1.92M revenue · 30% profit margin</p>
